@@ -4,6 +4,7 @@
     margin: 0;
     padding: 0;
     font-family: 'Montserrat', sans-serif;
+    scroll-behavior: smooth;
 }
 
 nav {
@@ -11,6 +12,7 @@ nav {
     background-color: #33333380;
     backdrop-filter: blur(10px);
     width: 100%;
+    z-index: 20;
 }
 
 .background-img {
@@ -112,22 +114,49 @@ li a:hover {
     transform: translateY(-100%);
 }
 
+main {
+    margin: 2em 3em;
+}
+
+main > article {
+    margin-bottom: 5em;
+}
+
+main > h3 {
+    font-size: 40px;
+    width: max-content;
+    margin-bottom: 1em;
+}
+
+h4 {
+    font-size: 24px;
+    margin-bottom: 0.5em;
+}
+
+h4 > span {
+    color: #faa61a;
+}
+
 .items {
     display: flex;
     flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
 }
 
 .items > section {
     width: 15em;
     padding: 2.5em;
-    border-radius: 10px;
-    -webkit-box-shadow: 0px 0px 32px 5px rgba(0,0,0,0.4); 
-    box-shadow: 0px 0px 32px 5px rgba(0,0,0,0.4);
-    margin: 0 auto;
+    border-radius: 15px;
+    background: #f0f0f0;
+    box-shadow:  27px 27px 54px #bebebe,
+             -27px -27px 54px #ffffff;
+    margin-bottom: 2em;
 }
 
 .items > section > img {
     width: 15em;
+    height: 10em;
 }
 
 .items > section > h4 {
@@ -143,10 +172,72 @@ li a:hover {
 }
 
 .items > section > a {
-    padding: 1em;
-    margin-top: 50em;
     font-weight: 600;
     text-decoration: none;
     color: black;
+    font-size: 17px;
     background-color: #faa61a;
+    border: 1px solid #faa61a;
+    border-radius: 5px;
+    padding: 10px;
+    box-shadow: 0px 6px 0px #d35400;
+    transition: all .1s;
+}
+   
+.items > section > a:active {
+    box-shadow: 0px 2px 0px #d35400;
+    position: relative;
+    top: 2px;
+}
+
+.campus {
+    display: grid;
+}
+
+.campus > section {
+    margin-bottom: 1em;
+}
+
+.campus > h4 {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.campus > p {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.campus > div {
+    grid-row: 1/6;
+    grid-column: 2;
+    background-image: url("https://gamingcampus.fr/wp-content/webp-express/webp-images/uploads/2021/02/situation-paris.jpg.webp");
+    width: 40vw;
+    height: 35em;
+    z-index: 80;
+}
+
+.space-up {
+    margin-top: 1em;
+}
+
+.highlight {
+    background-image: linear-gradient(90deg, #faa61a, white);
+    background-position: bottom;
+    background-size: 100% 30%;
+    background-repeat: no-repeat;
+}
+
+footer {
+    background-color: black;
+    height: 3em;
+}
+
+footer > p {
+    position: relative;
+    top: 50%;
+    color: white;
+    text-align: center;
+    -ms-transform: translateY(-50%);
+    transform: translateY(-50%);
 }
